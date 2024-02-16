@@ -3,7 +3,7 @@ import flask
 import requests as req
 
 app=Flask(__name__)
-server_list={"5001":0,"5002":0}
+server_list={"5001":0,"5002":0,"5003":0}
 
 def free_server():
     pointer=10000000000

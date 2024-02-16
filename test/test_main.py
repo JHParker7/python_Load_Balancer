@@ -29,6 +29,6 @@ def test_load_balancer_stress_10():
     
 def test_load_balancer_stress_100():
     stress=100
-    assert load_balancer_stress(stress,6) == ["hello world" for x in range(stress)]
+    assert load_balancer_stress(stress,8) == ["hello world" for x in range(stress)]
     
 

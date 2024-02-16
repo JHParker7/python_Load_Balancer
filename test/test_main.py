@@ -1,7 +1,13 @@
 import requests as req
+import multiprocessing as par
+
+def get(x):
+    return req.get(url="http://127.0.0.1:5000/get").content.decode()
 
 def load_balancer_stress(stress):
-    res=[req.get(url="http://127.0.0.1:5000/get").content.decode() for x in range(stress)]
+    Pool=par.Pool(4)
+    stress=[None for x in range(stress)]
+    res=Pool.map(get,stress)
     return res
 
 def test_load_balancer_work():
